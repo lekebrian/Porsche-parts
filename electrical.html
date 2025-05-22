@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OEM ENGINE PARTS</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="search.js" defer></script>
+</head>
+<body>
+    <header class="head-1">
+        <div class="logo">
+            <img class="left" src="porsche-logo.jpg" width="60px" height="80px">
+            <div class="line"></div>
+            <h2 class="right">PORSCHE PARTS ONLINE</h2>
+        </div>
+        <ul class="nav-bar">
+            <li class="top-nav"><a href="contactus.html"><i class="fas fa-circle-question"></i><span class="nav-text">Contact Us</span></a></li>
+            <li class="top-nav"><a class="my-cart-text" href="cart-display.html"><i class="fas fa-shopping-cart"></i><span class="nav-text">My Cart</span></a></li>
+        </ul>
+    </header>
+    <header class="head-2">
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <div class="head-2-left">
+        <a class="home-link" href="homepage.html">Home</a>
+        <div class="dropdown" id="productDropdown">
+            <button class="dropdown-toggle">Parts</button>
+            <div class="dropdown-menu">
+              <div class="dropp">
+                  <a href="Engine.html">Engine Components</a>
+                  <a href="brake.html">Braking System</a>
+                  <a href="suspension.html">Suspension & Steering</a>
+                  <a href="transmission.html">Transmission & Drivetrain</a>
+                  <a href="exhaust.html">Exhaust System</a>
+              </div>
+              <div class="dropp">
+                  <a href="electrical.html">Electrical & Lighting</a>
+                  <a href="interior.html">Interior Parts</a>
+                  <a href="exterior.html">Exterior & Body Parts</a>
+                  <a href="fuel.html">Fuel System</a>
+                  <a href="cooling.html">Cooling System</a>
+              </div>
+            </div>
+          </div>
+  
+         
+  
+            <div class="dropdown" id="newproductDropdown">
+              <button class="dropdown-toggle">Accessories</button>
+              <div class="dropdown-menu">
+                  <div class="dropp">
+                      <a href="performance.html">Performance Accessories</a><br>
+                      <a href="intacc.html">Interior Accessories</a><br>
+                      <a href="extacc.html">Exterior Accessories</a><br>
+                    </div>
+                    <div class="dropp">
+                        <a href="tech.html">Tech & Convenience Accessories</a><br>
+                        <a href="wheels.html">Wheels & Tire Accessories</a><br>
+                        <a href="lifestyle.html">Lifestyle & Brand Gear</a><br>
+                      </div>
+              </div>
+            </div>
+  
+          <a class="home-link" href="about.html">About Us</a>
+          <a class="home-link" href="review.html">Reviews</a>
+    </div>
+        
+    <div class="hold"><marquee><div class="head-2-right">
+       
+        <p><i class="fas fa-truck"></i>&nbsp;Fast Shipping</p>
+        <p><i class="fas fa-check"></i>&nbsp;Satisfaction Guarantee</p>
+    </div></marquee></div>
+        <script>
+          const dropdown = document.getElementById('productDropdown');
+          const toggle = dropdown.querySelector('.dropdown-toggle');
+        
+          toggle.addEventListener('mouseover', () => {
+            dropdown.classList.toggle('open');
+          });
+        
+          // Optional: close the dropdown if clicking outside
+          document.addEventListener('mouseout', function(e) {
+            if (!dropdown.contains(e.target)) {
+              dropdown.classList.remove('open');
+            }
+          });
+
+          const newdropdown = document.getElementById('newproductDropdown');
+          const newtoggle = newdropdown.querySelector('.dropdown-toggle');
+        
+          newtoggle.addEventListener('mouseover', () => {
+            newdropdown.classList.toggle('open');
+          });
+        
+          // Optional: close the dropdown if clicking outside
+          document.addEventListener('mouseout', function(e) {
+            if (!newdropdown.contains(e.target)) {
+              newdropdown.classList.remove('open');
+            }
+          });
+        </script>
+    </header>
+
+    <nav class="mobile-nav">
+        <div class="mobile-nav-content">
+            <a class="mobile-link" href="homepage.html">Home</a>
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle">Parts</button>
+                <div class="mobile-dropdown-menu">
+                    <a href="Engine.html">Engine Components</a>
+                    <a href="brake.html">Brake System</a>
+                    <a href="suspension.html">Suspension & Steering</a>
+                    <a href="transmission.html">Transmission & Drivetrain</a>
+                    <a href="exhaust.html">Exhaust System</a>
+                    <a href="electrical.html">Electrical & Lighting</a>
+                    <a href="interior.html">Interior Parts</a>
+                    <a href="exterior.html">Exterior & Body Parts</a>
+                    <a href="fuel.html">Fuel System</a>
+                    <a href="cooling.html">Cooling System</a>
+                </div>
+            </div>
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle">Accessories</button>
+                <div class="mobile-dropdown-menu">
+                    <a href="performance.html">Performance Accessories</a>
+                    <a href="intacc.html">Interior Accessories</a>
+                    <a href="extacc.html">Exterior Accessories</a>
+                    <a href="tech.html">Tech & Convenience Accessories</a>
+                    <a href="wheels.html">Wheels & Tire Accessories</a>
+                    <a href="lifestyle.html">Lifestyle & Brand Gear</a>
+                </div>
+            </div>
+            <a class="mobile-link" href="about.html">About Us</a>
+            <a class="mobile-link" href="review.html">Reviews</a>
+        </div>
+    </nav>
+
+    <section class="page-contents">
+     <div class="src-container">
+      <input type="text" class="src-bar" placeholder="Search for Engine parts" id="searchbar">
+      
+    </div> 
+    <div class="content-container">
+        <div class="top-texts">
+        <h4 class="uptexts"><span class="home"><a class="homelink" href="homepage.html">Home</a></span>&nbsp;OEM Porsche Engine Parts</h4>
+        <h3 class="downtexts">OEM Porsche Brake Parts</h3>
+        <div class="select">
+          <h4 class="select-head">REFINE RESULTS</h4>
+          <select class="brand">
+            <option value="">select car brand</option>
+            <option value="porsche">Porsche</option>
+          </select>
+          <select class="brand">
+            <option value="">select car model</option>
+            <option value="porsche">All Models</option>
+          </select>
+          <select class="brand">
+            <option value="">Year</option>
+            <option value="porsche">All years</option>
+          </select>
+          <button class="clr">Clear</button>
+        </div>
+        </div>
+
+        <div class="part-description">
+         <diV><p class="first-description">
+            Your engine is a complex machine, but it's also the heart of your Porsche model. It also includes many working parts. 
+            For example, the cylinder, whether it's four, six, or eight cylinders, is the core part of the engine. 
+            The piston moves up and down inside
+             of the cylinder. Spark plugs ignite the air and fuel mixture so that the combustion process can happen. 
+             The crankshaft is responsible for turning the piston's up-and-down motion into a circular one.
+          </p>
+          <h3 class="bold-text">What Are Some Common Engine Problems?</h3>
+          <p class="second-description">
+            Over time, your engine may start developing problems. Diagnosing engine issues is not always 
+            easy, but you can keep an eye out for some of the warning signs. These symptoms may include:
+          </p>
+          <ul class="description-list">
+            <li>Engine misfires</li>
+            <li>Oil buildup</li>
+            <li>Poor Compression</li>
+            <li>No engine lubrication</li>
+            <li>Leaking or dirty engine coolant</li>
+            <li>Broken or aged spark plugs</li>
+            <li>The "Check Engine" turns on</li>
+            <li>A malfunctioning oxygen sensor</li>
+            
+          </ul>
+          <h3 class="bold-text">Order Genuine Porsche Engine Parts Online Today</h3>
+        <p class="third-description">
+          When it comes to repairing your engine, always choose OEM Porsche parts. Unlike aftermarket options, these 
+          are guaranteed to fit your specific model. Please feel free to place your next order right here through our website. 
+          Once received, we will ship it out to you -- directly to your front door. Shop now and explore your options!
+        </p></diV> 
+        <div class="cart" data-id="8">
+          <img src="engine.jpg" class="cart-img" width="150px" height="150px">
+          <span class="cart-details">
+            <h4 class="detail-head">Brake Pads & Rotors</h4>
+            <p class="price">$2534.60</p>
+            <span class="detail-logo">
+              <img src="porsche-logo.jpg" width="50px" height="50px">
+              <p class="porsche">Porsche</p>
+            </span>
+            <span class="description-container">
+              <h4 class="item-description">Description:</h4>
+              <p>911 Turbo Right</p>
+            </span>
+            <span class="description-container">
+              <h4 class="item-description">Fits:</h4>
+              <p>Porsche 911</p>
+            </span>
+          </span>
+          <span class="add">
+            <span class="quantity">
+              <button class="decrease">-</button>
+              <span class="qty">1</span>
+              <button class="increase">+</button>
+            </span>
+            <button class="cart-btn">ADD TO CART&nbsp;<i class="fas fa-shopping-cart"></i></button>
+            <a href="cart-display.html" class="view-cart-link">View Cart</a>
+          </span>
+        </div>
+
+        <div class="cart" data-id="2">
+          <img src="engine.jpg" class="cart-img" width="150px" height="150px">
+          <span class="cart-details">
+            <h4 class="detail-head">Motor Valve Cover</h4>
+            <p class="price">$2534.60</p>
+            <span class="detail-logo">
+              <img src="porsche-logo.jpg" width="50px" height="50px">
+              <p class="porsche">Porsche</p>
+            </span>
+            <span class="description-container">
+              <h4 class="item-description">Description:</h4>
+              <p>911 Turbo Right</p>
+            </span>
+            <span class="description-container">
+              <h4 class="item-description">Fits:</h4>
+              <p>Porsche 911</p>
+            </span>
+          </span>
+          <span class="add">
+            <span class="quantity">
+              <button class="decrease">-</button>
+              <span class="qty">1</span>
+              <button class="increase">+</button>
+            </span>
+            <button class="cart-btn">ADD TO CART&nbsp;<i class="fas fa-shopping-cart"></i></button>
+            <a href="cart-display.html" class="view-cart-link">View Cart</a>
+          </span>
+        </div>
+        <div class="cart" data-id="3">
+          <img src="engine.jpg" class="cart-img" width="150px" height="150px">
+          <span class="cart-details">
+            <h4 class="detail-head">Engine Valve Cover</h4>
+            <p class="price">$2534.60</p>
+            <span class="detail-logo">
+              <img src="porsche-logo.jpg" width="50px" height="50px">
+              <p class="porsche">Porsche</p>
+            </span>
+            <span class="description-container">
+              <h4 class="item-description">Description:</h4>
+              <p>911 Turbo Right</p>
+            </span>
+            <span class="description-container">
+              <h4 class="item-description">Fits:</h4>
+              <p>Porsche 911</p>
+            </span>
+          </span>
+          <span class="add">
+            <span class="quantity">
+              <button class="decrease">-</button>
+              <span class="qty">1</span>
+              <button class="increase">+</button>
+            </span>
+            <button class="cart-btn">ADD TO CART&nbsp;<i class="fas fa-shopping-cart"></i></button>
+            <a href="cart-display.html" class="view-cart-link">View Cart</a>
+          </span>
+        </div>
+        <div class="cart" data-id="4">
+          <img src="engine.jpg" class="cart-img" width="150px" height="150px">
+          <span class="cart-details">
+            <h4 class="detail-head">Engine Valve Cover</h4>
+            <p class="price">$2534.60</p>
+            <span class="detail-logo">
+              <img src="porsche-logo.jpg" width="50px" height="50px">
+              <p class="porsche">Porsche</p>
+            </span>
+            <span class="description-container">
+              <h4 class="item-description">Description:</h4>
+              <p>911 Turbo Right</p>
+            </span>
+            <span class="description-container">
+              <h4 class="item-description">Fits:</h4>
+              <p>Porsche 911</p>
+            </span>
+          </span>
+          <span class="add">
+            <span class="quantity">
+              <button class="decrease">-</button>
+              <span class="qty">1</span>
+              <button class="increase">+</button>
+            </span>
+            <button class="cart-btn">ADD TO CART&nbsp;<i class="fas fa-shopping-cart"></i></button>
+            <a href="cart-display.html" class="view-cart-link">View Cart</a>
+          </span>
+        </div>
+        <div class="cart" data-id="5">
+          <img src="engine.jpg" class="cart-img" width="150px" height="150px">
+          <span class="cart-details">
+            <h4 class="detail-head">Engine Valve Cover</h4>
+            <p class="price">$2534.60</p>
+            <span class="detail-logo">
+              <img src="porsche-logo.jpg" width="50px" height="50px">
+              <p class="porsche">Porsche</p>
+            </span>
+            <span class="description-container">
+              <h4 class="item-description">Description:</h4>
+              <p>911 Turbo Right</p>
+            </span>
+            <span class="description-container">
+              <h4 class="item-description">Fits:</h4>
+              <p>Porsche 911</p>
+            </span>
+          </span>
+          <span class="add">
+            <span class="quantity">
+              <button class="decrease">-</button>
+              <span class="qty">1</span>
+              <button class="increase">+</button>
+            </span>
+            <button class="cart-btn">ADD TO CART&nbsp;<i class="fas fa-shopping-cart"></i></button>
+            <a href="cart-display.html" class="view-cart-link">View Cart</a>
+          </span>
+        </div>
+        <div class="cart" data-id="6">
+          <img src="engine.jpg" class="cart-img" width="150px" height="150px">
+          <span class="cart-details">
+            <h4 class="detail-head">Brake Pads</h4>
+            <p class="price">$2534.60</p>
+            <span class="detail-logo">
+              <img src="porsche-logo.jpg" width="50px" height="50px">
+              <p class="porsche">Porsche</p>
+            </span>
+            <span class="description-container">
+              <h4 class="item-description">Description:</h4>
+              <p>911 Turbo Right</p>
+            </span>
+            <span class="description-container">
+              <h4 class="item-description">Fits:</h4>
+              <p>Porsche 911</p>
+            </span>
+          </span>
+          <span class="add">
+            <span class="quantity">
+              <button class="decrease">-</button>
+              <span class="qty">1</span>
+              <button class="increase">+</button>
+            </span>
+            <button class="cart-btn">ADD TO CART&nbsp;<i class="fas fa-shopping-cart"></i></button>
+            <a href="cart-display.html" class="view-cart-link">View Cart</a>
+          </span>
+        </div>
+        <script>
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        
+          document.querySelectorAll('.cart').forEach(product => {
+            const id = product.dataset.id;
+            const name = product.querySelector('.detail-head').innerText;
+            const price = parseFloat(product.querySelector('.price').innerText.replace('$', ''));
+            const qtySpan = product.querySelector('.qty');
+            let quantity = parseInt(qtySpan.innerText);
+        
+            product.querySelector('.increase').addEventListener('click', () => {
+              quantity++;
+              qtySpan.innerText = quantity;
+            });
+        
+            product.querySelector('.decrease').addEventListener('click', () => {
+              if (quantity > 1) {
+                quantity--;
+                qtySpan.innerText = quantity;
+              }
+            });
+        
+            product.querySelector('.cart-btn').addEventListener('click', () => {
+              const existingItem = cart.find(item => item.id === id);
+              if (existingItem) {
+                existingItem.quantity += quantity;
+              } else {
+                cart.push({ id, name, price, quantity });
+              }
+              localStorage.setItem("cart", JSON.stringify(cart));
+              alert(`${name} added to cart!`);
+            });
+          });
+        </script>
+               
+        </div></div>
+    </section>
+
+    <footer class="foot-section">
+        <div class="whole-foot">
+       <div class="line-nav">
+        <div class="red-line"></div>
+        <div class="navigation">
+         <h3 class="nav-head">Navigation</h3>
+         <ul class="foot-lists">
+            
+            <li><a class="foot-links" href="#">Accessories&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            <li><a class="foot-links" href="#">About Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            <li><a class="foot-links" href="#">Contact Us Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+         </ul>
+        </div>
+    </div>
+
+    <div class="line-nav">
+        <div class="red-line"></div>
+        <div class="navigation">
+          <h3 class="nav-head">My Cart</h3>
+          <ul class="foot-lists">
+             <li><a class="foot-links" href="cart-display.html">My Cart&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <div class="line-nav line-nav--primary">
+        <div class="red-line"></div>
+        <div class="navigation">
+         <h3 class="nav-head">Policies</h3>
+         <ul class="foot-lists">
+          <li><a class="foot-links" href="terms.html">Terms and Conditions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+          <li><a class="foot-links" href="shippolicy.html">Shipping Policy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+          <li><a class="foot-links" href="returnpolicy.html">Return Policy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+         
+         </ul>
+        </div>
+    </div>
+    <div class="line-nav">
+        <div class="red-line red-line--contact"></div>
+        <div class="navigation">
+         <h3 class="nav-head">Contact</h3>
+         <ul class="foot-lists">
+            <li><a  href="#">Porsche OEM Parts Online&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+          
+            <li><a  href="about.html">About Us&nbsp;&nbsp;&nbsp;</a></li>
+            <li><a class="foot-links" href="contactus.html">Contact Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+         </ul>
+         <div class="contact-down">
+          <h3 class="contact-down-head">Newsletter Signup</h3>
+          <div class="contact-down-input">
+            <input class="input-container" type="text" placeholder="enter your email address">
+            <button class="submit">SUBMIT</button>
+          </div>
+         </div>
+        </div>
+    </div>
+</div>
+
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

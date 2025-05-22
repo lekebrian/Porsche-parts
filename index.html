@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>porsche project</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="head-1">
+    <div class="logo">
+        <img class="left" src="porsche-logo.jpg" width="60px" height="80px">
+        <div class="line"></div>
+        <h2 class="right">PORSCHE PARTS ONLINE</h2>
+    </div>
+   
+    <ul class="nav-bar">
+        <li class="top-nav">
+            <a href="contactus.html">
+                <i class="fas fa-circle-question"></i>
+                <span class="nav-text">Contact Us</span>
+            </a>
+        </li>
+        <li class="top-nav">
+            <a href="cart-display.html">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="nav-text">My Cart</span>
+            </a>
+        </li>
+    </ul>
+</header>
+
+    
+    <header class="head-2">
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <div class="head-2-left">
+        <a class="home-link" href="#">Home</a>
+
+        <div class="dropdown" id="productDropdown">
+          <button class="dropdown-toggle">Parts</button>
+          <div class="dropdown-menu">
+            <div class="dropp">
+            <a href="Engine.html">Engine Components</a>
+            <a href="brake.html">Brake System</a>
+            <a href="suspension.html">Suspension & Steering</a>
+            <a href="transmission.html">Transmission & Drivetrain</a>
+            <a href="exhaust.html">Exhaust System</a>
+        </div>
+        <div class="dropp">
+            <a href="electrical.html">Electrical & Lighting</a>
+            <a href="interior.html">Interior Parts</a>
+            <a href="exterior.html">Exterior & Body Parts</a>
+            <a href="fuel.html">Fuel System</a>
+            <a href="cooling.html">Cooling System</a>
+        </div>
+          </div>
+        </div>
+
+       
+
+          <div class="dropdown" id="newproductDropdown">
+            <button class="dropdown-toggle">Accessories</button>
+            <div class="dropdown-menu">
+                <div class="dropp">
+              <a href="performance.html">Performance Accessories</a><br>
+              <a href="intacc.html">Interior Accessories</a><br>
+              <a href="extacc.html">Exterior Accessories</a><br>
+            </div>
+            <div class="dropp">
+                <a href="tech.html">Tech & Convenience Accessories</a><br>
+                <a href="wheels.html">Wheels & Tire Accessories</a><br>
+                <a href="lifestyle.html">Lifestyle & Brand Gear</a><br>
+              </div>
+            </div>
+          </div>
+
+          <a class="home-link" href="about.html">About Us</a>
+          <a class="home-link" href="review.html">Reviews</a>
+    </div>
+        
+    <div class="hold"><div class="head-2-right">
+       
+       
+        <p><i class="fas fa-check"></i>&nbsp;Satisfaction Guarantee</p>
+    </div></div>
+        <script>
+          const dropdown = document.getElementById('productDropdown');
+          const toggle = dropdown.querySelector('.dropdown-toggle');
+        
+          toggle.addEventListener('click', () => {
+            dropdown.classList.toggle('open');
+          });
+        
+          // Optional: close the dropdown if clicking outside
+          document.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+              dropdown.classList.remove('open');
+            }
+          });
+
+          const newdropdown = document.getElementById('newproductDropdown');
+          const newtoggle = newdropdown.querySelector('.dropdown-toggle');
+        
+          newtoggle.addEventListener('click', () => {
+            newdropdown.classList.toggle('open');
+          });
+        
+          // Optional: close the dropdown if clicking outside
+          document.addEventListener('click', function(e) {
+            if (!newdropdown.contains(e.target)) {
+              newdropdown.classList.remove('open');
+            }
+          });
+        </script>
+    </header>
+    <nav class="mobile-nav">
+        <div class="mobile-nav-content">
+            <a class="mobile-link" href="#">Home</a>
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle">Parts</button>
+                <div class="mobile-dropdown-menu">
+                    <a href="Engine.html">Engine Components</a>
+                    <a href="brake.html">Brake System</a>
+                    <a href="suspension.html">Suspension & Steering</a>
+                    <a href="transmission.html">Transmission & Drivetrain</a>
+                    <a href="exhaust.html">Exhaust System</a>
+                    <a href="electrical.html">Electrical & Lighting</a>
+                    <a href="interior.html">Interior Parts</a>
+                    <a href="exterior.html">Exterior & Body Parts</a>
+                    <a href="fuel.html">Fuel System</a>
+                    <a href="cooling.html">Cooling System</a>
+                </div>
+            </div>
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle">Accessories</button>
+                <div class="mobile-dropdown-menu">
+                    <a href="performance.html">Performance Accessories</a>
+                    <a href="intacc.html">Interior Accessories</a>
+                    <a href="extacc.html">Exterior Accessories</a>
+                    <a href="tech.html">Tech & Convenience Accessories</a>
+                    <a href="wheels.html">Wheels & Tire Accessories</a>
+                    <a href="lifestyle.html">Lifestyle & Brand Gear</a>
+                </div>
+            </div>
+            <a class="mobile-link" href="about.html">About Us</a>
+            <a class="mobile-link" href="review.html">Reviews</a>
+        </div>
+    </nav>
+    <section class="first-section">
+        <div class="sec1">
+            <div class="search-bar">
+                <div class="one one--primary">1</div>
+                <h4 class="search-head">Genuine OEM Porsche Parts & Accessories Store</h4>
+                <div class="bar">
+                    <div class="bar-input">
+                        <input class="search-input" type="text" name="search" placeholder="Search Part(s) or Keywords">
+                    </div>
+                    <div class="search-btn"><i class="fas fa-search"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="second-section">
+        <div class="second-head">
+            <h3 class="third-heading">Porsche OEM Parts Online</h3><br><br>
+<p class="heading-description">At <span class="highlight">Porsche OEM Parts</span> Online we have made it even easier to shop for auto parts online. From <span class="highlight">popular part categories</span> and the ability to search<br> the entire Porsche OEM parts catalog by part name, part number, or your VIN, we are sure you will be able to find what you need. 
+Our <br>inventory is synced up with certified Porsche Dealership Parts Departments across the nation, so no matter what part you are looking for, there<br> is a higher chance it will be in stock and ready to ship.
+To get started you can use the search features above, or <span class="highlight">Select Your Porsche Model</span>.<br> When you select your specific model you will only be shown the parts that fit your vehicle and you will always know you are getting the right<br> part.
+<br><br>Thank you for shopping with <span class="highlight">Porsche OEM Parts</span> Online and feel free to Contact Us with any and all questions you may have.
+</p> </div>
+
+        <div class="second-sec">
+            <div class="left-side">
+                <h3 class="left-head">Popular Porsche Parts</h3>
+                <ul class="left-items">
+                    <li class="left-item"><img src="engine.jpg">&nbsp;OEM ENGINE</li>
+                    <li class="left-item"><img src="seats.jpg">&nbsp;RECARO SEATS</li>
+                    <li class="left-item"><img src="taillights.jpg">&nbsp;LED TAILLIGHTS</li>
+                    <li class="left-item"><img src="header.jpg">&nbsp;DUAL HEAD HEADERS</li>
+                    <li class="left-item"><img src="seats.jpg">&nbsp;SEATS(OEM)</li>
+                    <li class="left-item"><img src="headlight.jpg">&nbsp;HEADLIGHTS</li>
+                </ul>
+            </div>
+            <div class="right-side">
+                <div class="right-up"></div>
+                <div class="right-down">
+                  <h3 class="right-down-head">SPECIALS & PROMOTIONS</h3>
+                  <div class="specials">
+                    <div class="special"></div>
+                    <div class="special"></div>
+                    <div class="special"></div>
+                  </div>
+                </div>
+                <h3>FEATURED PRODUCTS</h3>
+                <div class="main-products">
+                  <div class="line-1">
+                    <div class="product"></div>
+                    <div class="product"></div>
+                    <div class="product"></div>
+                  </div>
+                  <div class="line-1">
+                    <div class="product"></div>
+                    <div class="product"></div>
+                    <div class="product"></div>
+                  </div>
+                  <div class="line-1">
+                    <div class="product"></div>
+                    <div class="product"></div>
+                    <div class="product"></div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="foot-section">
+        <div class="whole-foot">
+       <div class="line-nav">
+        <div class="red-line"></div>
+        <div class="navigation">
+         <h3 class="nav-head">Navigation</h3>
+         <ul class="foot-lists">
+           
+            <li><a class="foot-links" href="#">Accessories&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            <li><a class="foot-links" href="about.html">About Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            <li><a class="foot-links" href="contactus.html">Contact Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+         </ul>
+        </div>
+    </div>
+
+    <div class="line-nav">
+        <div class="red-line"></div>
+        <div class="navigation">
+          <h3 class="nav-head">My Cart</h3>
+          <ul class="foot-lists">
+             <li><a class="foot-links" href="cart-display.html">My Cart&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <div class="line-nav line-nav--primary">
+        <div class="red-line"></div>
+        <div class="navigation">
+         <h3 class="nav-head">Policies</h3>
+         <ul class="foot-lists">
+          <li><a class="foot-links" href="terms.html">Terms and Conditions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+          <li><a class="foot-links" href="shippolicy.html">Shipping Policy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+          <li><a class="foot-links" href="returnpolicy.html">Return Policy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+         
+         </ul>
+        </div>
+    </div>
+    <div class="line-nav">
+        <div class="red-line red-line--contact"></div>
+        <div class="navigation">
+         <h3 class="nav-head">Contact</h3>
+         <ul class="foot-lists">
+            <li><a  href="#">Porsche OEM Parts Online&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+           
+            <li><a  href="about.html">About Us&nbsp;&nbsp;&nbsp;</a></li>
+            <li><a class="foot-links" href="contactus.html">Contact Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+         </ul>
+         <div class="contact-down">
+          <h3 class="contact-down-head">Newsletter Signup</h3>
+          <div class="contact-down-input">
+            <input class="input-container" type="text" placeholder="enter your email address">
+            <button class="submit">SUBMIT</button>
+          </div>
+         </div>
+        </div>
+    </div>
+</div>
+
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

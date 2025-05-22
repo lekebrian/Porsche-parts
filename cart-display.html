@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart</title>
+  <link rel="stylesheet" href="homepage.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .cart-item { margin-bottom: 15px; border-bottom: 1px solid #888; padding: 10px 0; }
+    button {border: none; margin-left: 15px; }
+    .mid-section{
+      display: flex;
+      flex-direction: column;
+     
+      align-items: center;
+      text-align: center;
+      gap: 40px;
+    }
+    .mid-div{
+      background-color: #eee;
+      width: 1000px;
+      border: 1px solid #222;
+      margin-top: 70px;
+    }
+    .h2{
+  font-size: 30px;
+  margin-bottom: 30px;
+    }
+    .cart-item{
+      margin-right: 700px;
+    }
+    
+    .del{
+      padding: 5px;
+      background-color: rgb(204, 13, 13) ;
+      color: #fff;
+      border-radius: 2px;
+    }
+    #place-order{
+     background-color: rgb(204, 13, 13);
+     padding: 10px;
+     border-radius: 3px;
+     color:#fff ;
+     margin-bottom: 20px;
+    }
+    .second-div{
+       display: flex;
+       gap: 40px;
+       justify-content: space-between;
+    }
+    .pop-items{
+      width: 230px;
+     height: 650px;
+      background-color: #eee;
+      margin-bottom: 30px;
+    }
+    .pic{
+      width: 100%;
+      height: 45%;
+      
+    }
+    .img-description{
+      margin-right: 200px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      justify-content: center;
+      width: 100%;
+      height: 55%;
+      font-size: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="head-1">
+    <div class="logo">
+        <img class="left" src="porsche-logo.jpg" width="60px" height="80px">
+        <div class="line"></div>
+        <h2 class="right">OEM PARTS ONLINE</h2>
+    </div>
+    <ul class="nav-bar">
+        <li><a href="contactus.html"><i class="fas fa-circle-question"></i>&nbsp;CONTACT US</a></li>
+     
+        <li><a class="my-cart-text" href="#"><i class="fas fa-shopping-cart"></i>&nbsp;MY CART</a></li>
+    </ul>
+</header>
+<header class="head-2">
+    <div class="head-2-left">
+    <a class="home-link" href="homepage.html">Home</a>
+
+    <div class="dropdown" id="productDropdown">
+      <button class="dropdown-toggle">Parts</button>
+      <div class="dropdown-menu">
+        <div class="dropp">
+        <a href="Engine.html">Engine Components</a>
+        <a href="brake.html">Braking System</a>
+        <a href="suspension.html">Suspension & Steering</a>
+        <a href="transmission.html">Transmission & Drivetrain</a>
+        <a href="exhaust.html">Exhaust System</a>
+    </div>
+    <div class="dropp">
+        <a href="electrical.html">Electrical & Lighting</a>
+        <a href="interior.html">Interior Parts</a>
+        <a href="exterior.html">Exterior & Body Parts</a>
+        <a href="fuel.html">Fuel System</a>
+        <a href="cooling.html">Cooling System</a>
+    </div>
+      </div>
+    </div>
+
+   
+
+      <div class="dropdown" id="newproductDropdown">
+        <button class="dropdown-toggle">Accessories</button>
+        <div class="dropdown-menu">
+            <div class="dropp">
+          <a href="performance.html">Performance Accessories</a><br>
+          <a href="intacc.html">Interior Accessories</a><br>
+          <a href="extacc.html">Exterior Accessories</a><br>
+        </div>
+        <div class="dropp">
+            <a href="tech.html">Tech & Convenience Accessories</a><br>
+            <a href="wheels.html">Wheels & Tire Accessories</a><br>
+            <a href="lifestyle.html">Lifestyle & Brand Gear</a><br>
+          </div>
+        </div>
+      </div>
+
+      <a class="home-link" href="about.html">About Us</a>
+      <a class="home-link" href="review.html">Reviews</a>
+</div>
+    
+<div class="hold"><marquee><div class="head-2-right">
+   
+    <p><i class="fas fa-truck"></i>&nbsp;Fast Shipping</p>
+    <p><i class="fas fa-check"></i>&nbsp;Satisfaction Guarantee</p>
+</div></marquee></div>
+    <script>
+      const dropdown = document.getElementById('productDropdown');
+      const toggle = dropdown.querySelector('.dropdown-toggle');
+    
+      toggle.addEventListener('mouseover', () => {
+        dropdown.classList.toggle('open');
+      });
+    
+      // Optional: close the dropdown if clicking outside
+      document.addEventListener('mouseout', function(e) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+        }
+      });
+
+      const newdropdown = document.getElementById('newproductDropdown');
+      const newtoggle = newdropdown.querySelector('.dropdown-toggle');
+    
+      newtoggle.addEventListener('mouseover', () => {
+        newdropdown.classList.toggle('open');
+      });
+    
+      // Optional: close the dropdown if clicking outside
+      document.addEventListener('mouseout', function(e) {
+        if (!newdropdown.contains(e.target)) {
+          newdropdown.classList.remove('open');
+        }
+      });
+    </script>
+</header>
+<section class="mid-section">
+  <div class="mid-div">
+  <h2 class="h2">Your Cart&nbsp;<i class="fas fa-shopping-cart"></i></h2>
+  <div id="cart-items"></div>
+  <button id="place-order">Place Order</button>
+
+  <script>
+    const cartContainer = document.getElementById('cart-items');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function renderCart() {
+      cartContainer.innerHTML = '';
+      cart.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          <strong>${item.name}</strong><br>
+          Price: $${item.price.toFixed(2)}<br>
+          Quantity: ${item.quantity}
+          <button class="del" onclick="removeItem(${index})">Delete</button>
+        `;
+        cartContainer.appendChild(div);
+      });
+
+      if (cart.length === 0) {
+        cartContainer.innerHTML = "<p>Your Shopping Cart is Empty.</p>";
+        cartContainer.style.marginBottom = "20px";
+      }
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('place-order').addEventListener('click', () => {
+    if (cart.length === 0) {
+      alert("Your cart is empty.");
+      return;
+    }
+
+    const body = cart.map(item =>
+      `Product: ${item.name}\nQuantity: ${item.quantity}\nPrice: $${item.price.toFixed(2)}\n`
+    ).join("\n");
+
+    const mailtoLink = `mailto:lekebryan64@gmail.com?subject=New Order&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+    localStorage.removeItem('cart');
+  });
+});
+    
+
+    renderCart();
+  </script>
+  </div>
+  <h3 class="div-head">Popular Accessories</h3>
+<div class="second-div">
+<div class="pop-items">
+  <img class="pic" src="engine.jpg">
+  <div class="img-description">
+      <h4 class="detail-head">Engine Valve Cover</h4>
+      <p class="price">$2534.60</p>
+      <span class="detail-logo">
+        <img src="porsche-logo.jpg" width="70px" height="60px">
+        <p class="porsche">Porsche</p>
+      </span>
+      <span class="description-container">
+        <h4 class="item-description">Description:</h4>
+        <p>911 Turbo Right</p>
+      </span>
+      <span class="description-container">
+        <h4 class="item-description">Fits:</h4>
+        <p>Porsche 911</p>
+      </span>
+   
+  </div>
+</div>
+<div class="pop-items">
+  <img class="pic" src="engine.jpg">
+  <div class="img-description">
+      <h4 class="detail-head">Engine Valve Cover</h4>
+      <p class="price">$2534.60</p>
+      <span class="detail-logo">
+        <img src="porsche-logo.jpg" width="70px" height="60px">
+        <p class="porsche">Porsche</p>
+      </span>
+      <span class="description-container">
+        <h4 class="item-description">Description:</h4>
+        <p>911 Turbo Right</p>
+      </span>
+      <span class="description-container">
+        <h4 class="item-description">Fits:</h4>
+        <p>Porsche 911</p>
+      </span>
+   
+  </div>
+</div>
+<div class="pop-items">
+  <img class="pic" src="engine.jpg">
+  <div class="img-description">
+      <h4 class="detail-head">Engine Valve Cover</h4>
+      <p class="price">$2534.60</p>
+      <span class="detail-logo">
+        <img src="porsche-logo.jpg" width="70px" height="60px">
+        <p class="porsche">Porsche</p>
+      </span>
+      <span class="description-container">
+        <h4 class="item-description">Description:</h4>
+        <p>911 Turbo Right</p>
+      </span>
+      <span class="description-container">
+        <h4 class="item-description">Fits:</h4>
+        <p>Porsche 911</p>
+      </span>
+   
+  </div>
+</div>
+<div class="pop-items">
+  <img class="pic" src="engine.jpg">
+  <div class="img-description">
+      <h4 class="detail-head">Engine Valve Cover</h4>
+      <p class="price">$2534.60</p>
+      <span class="detail-logo">
+        <img src="porsche-logo.jpg" width="70px" height="60px">
+        <p class="porsche">Porsche</p>
+      </span>
+      <span class="description-container">
+        <h4 class="item-description">Description:</h4>
+        <p>911 Turbo Right</p>
+      </span>
+      <span class="description-container">
+        <h4 class="item-description">Fits:</h4>
+        <p>Porsche 911</p>
+      </span>
+   
+  </div>
+</div>
+</div>
+  </section>
+   <footer class="foot-section">
+    <div class="whole-foot">
+   <div class="line-nav">
+    <div class="red-line"></div>
+    <div class="navigation">
+     <h3 class="nav-head">Navigation</h3>
+     <ul class="foot-lists">
+        <li><a class="foot-links" href="#">Accessories&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+        <li><a class="foot-links" href="about.html">About Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+        <li><a class="foot-links" href="contactus.html">Contact Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+     </ul>
+    </div>
+</div>
+
+<div class="line-nav">
+    <div class="red-line"></div>
+    <div class="navigation">
+     <h3 class="nav-head">My Cart</h3>
+     <ul class="foot-lists">
+        <li><a class="foot-links" href="cart-display.html">My Cart&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+     </ul>
+    </div>
+</div>
+
+<div class="line-nav line-nav--primary">
+    <div class="red-line"></div>
+    <div class="navigation">
+     <h3 class="nav-head">Policies</h3>
+     <ul class="foot-lists">
+      <li><a class="foot-links" href="terms.html">Terms and Conditions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+      <li><a class="foot-links" href="shippolicy.html">Shipping Policy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+      <li><a class="foot-links" href="returnpolicy.html">Return Policy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+     
+     </ul>
+    </div>
+</div>
+<div class="line-nav">
+    <div class="red-line red-line--contact"></div>
+    <div class="navigation">
+     <h3 class="nav-head">Contact</h3>
+     <ul class="foot-lists">
+        <li><a  href="#">Porsche OEM Parts Online&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+       
+        <li><a  href="about.html">About Us&nbsp;&nbsp;&nbsp;</a></li>
+        <li><a class="foot-links" href="contactus.html">Contact Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+     </ul>
+     <div class="contact-down">
+      <h3 class="contact-down-head">Newsletter Signup</h3>
+      <div class="contact-down-input">
+        <input class="input-container" type="text" placeholder="enter your email address">
+        <button class="submit">SUBMIT</button>
+      </div>
+     </div>
+    </div>
+</div>
+</div>
+
+</footer>
+</body>
+</html>
