@@ -107,67 +107,63 @@
         </ul>
     </header>
     <header class="head-2">
-        <div class="hamburger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        
         <div class="head-2-left">
-        <a class="home-link" href="homepage.html">Home</a>
-
-        <div class="dropdown" id="productDropdown">
-          <button class="dropdown-toggle">Parts</button>
-          <div class="dropdown-menu">
-            <div class="dropp">
-            <a href="Engine.html">Engine Components</a>
-            <a href="brake.html">Braking System</a>
-            <a href="suspension.html">Suspension & Steering</a>
-            <a href="transmission.html">Transmission & Drivetrain</a>
-            <a href="exhaust.html">Exhaust System</a>
-        </div>
-        <div class="dropp">
-            <a href="electrical.html">Electrical & Lighting</a>
-            <a href="interior.html">Interior Parts</a>
-            <a href="exterior.html">Exterior & Body Parts</a>
-            <a href="fuel.html">Fuel System</a>
-            <a href="cooling.html">Cooling System</a>
-        </div>
-          </div>
-        </div>
-
-       
-
-          <div class="dropdown" id="newproductDropdown">
-            <button class="dropdown-toggle">Accessories</button>
-            <div class="dropdown-menu">
-                <div class="dropp">
-              <a href="performance.html">Performance Accessories</a><br>
-              <a href="intacc.html">Interior Accessories</a><br>
-              <a href="extacc.html">Exterior Accessories</a><br>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            <div class="dropp">
-                <a href="tech.html">Tech & Convenience Accessories</a><br>
-                <a href="wheels.html">Wheels & Tire Accessories</a><br>
-                <a href="lifestyle.html">Lifestyle & Brand Gear</a><br>
-              </div>
-            </div>
-          </div>
+            <a class="home-link" href="index.html">Home</a>
 
-          <a class="home-link" href="about.html">About Us</a>
-          <a class="home-link" href="#">Reviews</a>
-    </div>
+            <div class="dropdown" id="productDropdown">
+                <button class="dropdown-toggle">Parts</button>
+                <div class="dropdown-menu">
+                    <div class="dropp">
+                        <a href="Engine.html">Engine Components</a>
+                        <a href="brake.html">Braking System</a>
+                        <a href="suspension.html">Suspension & Steering</a>
+                        <a href="transmission.html">Transmission & Drivetrain</a>
+                        <a href="exhaust.html">Exhaust System</a>
+                    </div>
+                    <div class="dropp">
+                        <a href="electrical.html">Electrical & Lighting</a>
+                        <a href="interior.html">Interior Parts</a>
+                        <a href="exterior.html">Exterior & Body Parts</a>
+                        <a href="fuel.html">Fuel System</a>
+                        <a href="cooling.html">Cooling System</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropdown" id="newproductDropdown">
+                <button class="dropdown-toggle">Accessories</button>
+                <div class="dropdown-menu">
+                    <div class="dropp">
+                        <a href="performance.html">Performance Accessories</a><br>
+                        <a href="intacc.html">Interior Accessories</a><br>
+                        <a href="extacc.html">Exterior Accessories</a><br>
+                    </div>
+                    <div class="dropp">
+                        <a href="tech.html">Tech & Convenience Accessories</a><br>
+                        <a href="wheels.html">Wheels & Tire Accessories</a><br>
+                        <a href="lifestyle.html">Lifestyle & Brand Gear</a><br>
+                    </div>
+                </div>
+            </div>
+
+            <a class="home-link" href="about.html">About Us</a>
+            <a class="home-link" href="#">Reviews</a>
+        </div>
         
-    <div class="hold"><marquee><div class="head-2-right">
-       
-        <p><i class="fas fa-truck"></i>&nbsp;Fast Shipping</p>
-        <p><i class="fas fa-check"></i>&nbsp;Satisfaction Guarantee</p>
-    </div></marquee></div>
-        <script src="script.js"></script>
+        <div class="hold">
+            <div class="head-2-right">
+                <p><i class="fas fa-check"></i>&nbsp;Satisfaction Guarantee</p>
+            </div>
+        </div>
     </header>
     <nav class="mobile-nav">
         <div class="mobile-nav-content">
-            <a class="mobile-link" href="homepage.html">Home</a>
+            <a class="mobile-link" href="index.html">Home</a>
             <div class="mobile-dropdown">
                 <button class="mobile-dropdown-toggle">Parts</button>
                 <div class="mobile-dropdown-menu">
@@ -201,7 +197,7 @@
 <section class="content-section">
     <div class="content-container">
         <div class="top-texts">
-        <h4 class="uptexts"><span class="home"><a class="homelink" href="homepage.html">Home</a></span>&nbsp;Reviews</h4>
+        <h4 class="uptexts"><span class="home"><a class="homelink" href="index.html">Home</a></span>&nbsp;Reviews</h4>
         <h3 class="downtexts">Reviews from Our Customers</h3>
         </div>
     </div>
@@ -381,29 +377,57 @@
 
     </footer>
     <script>
-        // Mobile Menu Functionality
-        const hamburger = document.querySelector('.hamburger-menu');
-        const mobileNav = document.querySelector('.mobile-nav');
-        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const mobileNav = document.querySelector('.mobile-nav');
+            const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-        });
-
-        mobileDropdownToggles.forEach(toggle => {
-            toggle.addEventListener('click', (e) => {
-                const dropdownMenu = e.target.nextElementSibling;
-                dropdownMenu.classList.toggle('active');
+            // Hamburger menu click handler
+            hamburger.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent event bubbling
+                this.classList.toggle('active');
+                
+                // Toggle spans for X animation
+                const spans = this.querySelectorAll('span');
+                spans[0].style.transform = this.classList.contains('active') ? 'rotate(45deg) translate(5px, 5px)' : 'none';
+                spans[1].style.opacity = this.classList.contains('active') ? '0' : '1';
+                spans[2].style.transform = this.classList.contains('active') ? 'rotate(-45deg) translate(7px, -7px)' : 'none';
+                
+                mobileNav.classList.toggle('active');
             });
-        });
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
-                mobileNav.classList.remove('active');
-                hamburger.classList.remove('active');
-            }
+            // Mobile dropdown toggles
+            mobileDropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const dropdownMenu = this.nextElementSibling;
+                    dropdownMenu.classList.toggle('active');
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
+                    mobileNav.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    const spans = hamburger.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+
+            // Desktop dropdowns
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                toggle.addEventListener('mouseover', () => {
+                    dropdown.classList.add('open');
+                });
+                dropdown.addEventListener('mouseleave', () => {
+                    dropdown.classList.remove('open');
+                });
+            });
         });
     </script>
 </body>

@@ -2,75 +2,445 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cart</title>
   <link rel="stylesheet" href="homepage.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    .cart-item { margin-bottom: 15px; border-bottom: 1px solid #888; padding: 10px 0; }
-    button {border: none; margin-left: 15px; }
-    .mid-section{
+    .cart-item { 
+      margin-bottom: 15px; 
+      border-bottom: 1px solid #888; 
+      padding: 15px; 
+      width: 100%;
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
-     
       align-items: center;
       text-align: center;
-      gap: 40px;
-    }
-    .mid-div{
-      background-color: #eee;
-      width: 1000px;
-      border: 1px solid #222;
-      margin-top: 70px;
-    }
-    .h2{
-  font-size: 30px;
-  margin-bottom: 30px;
-    }
-    .cart-item{
-      margin-right: 700px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     
-    .del{
-      padding: 5px;
-      background-color: rgb(204, 13, 13) ;
-      color: #fff;
-      border-radius: 2px;
+    button {
+      border: none; 
+      margin: 12px 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
-    #place-order{
-     background-color: rgb(204, 13, 13);
-     padding: 10px;
-     border-radius: 3px;
-     color:#fff ;
-     margin-bottom: 20px;
-    }
-    .second-div{
-       display: flex;
-       gap: 40px;
-       justify-content: space-between;
-    }
-    .pop-items{
-      width: 230px;
-     height: 650px;
-      background-color: #eee;
-      margin-bottom: 30px;
-    }
-    .pic{
-      width: 100%;
-      height: 45%;
-      
-    }
-    .img-description{
-      margin-right: 200px;
+    
+    .mid-section {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      text-align: center;
       gap: 30px;
-      justify-content: center;
+      padding: 25px;
       width: 100%;
-      height: 55%;
-      font-size: 20px;
+      box-sizing: border-box;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .mid-div {
+      background-color: #f5f5f5;
+      width: 100%;
+      max-width: 1000px;
+      border: 1px solid #ddd;
+      margin-top: 50px;
+      padding: 25px;
+      box-sizing: border-box;
+      border-radius: 8px;
+    }
+    
+    .h2 {
+      font-size: 32px;
+      margin-bottom: 35px;
+      color: #333;
+    }
+    
+    .del {
+      padding: 10px 20px;
+      background-color: rgb(204, 13, 13);
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .del:hover {
+      background-color: rgb(170, 11, 11);
+    }
+    
+    #place-order {
+      background-color: rgb(204, 13, 13);
+      padding: 15px 30px;
+      border-radius: 4px;
+      color: #fff;
+      margin: 25px 0;
+      font-size: 16px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    
+    #place-order:hover {
+      background-color: rgb(170, 11, 11);
+    }
+    
+    .second-div {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 25px;
+      width: 100%;
+      box-sizing: border-box;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .pop-items {
+      width: 100%;
+      height: auto;
+      min-height: 450px;
+      background-color: #fff;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .pop-items:hover {
+      transform: translateY(-5px);
+    }
+    
+    .pic {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+    }
+    
+    .img-description {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      font-size: 16px;
+      flex: 1;
     }
 
+    @media screen and (max-width: 768px) {
+      .mid-section {
+        padding: 15px;
+        gap: 25px;
+      }
+
+      .mid-div {
+        margin-top: 30px;
+        padding: 20px;
+      }
+
+      .h2 {
+        font-size: 26px;
+        margin-bottom: 25px;
+      }
+
+      .cart-item {
+        padding: 15px;
+        font-size: 14px;
+      }
+
+      .del {
+        padding: 8px 16px;
+      }
+
+      #place-order {
+        padding: 12px 25px;
+        font-size: 15px;
+      }
+
+      .second-div {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 15px;
+      }
+
+      .pop-items {
+        min-height: 400px;
+      }
+
+      .pic {
+        height: 180px;
+      }
+
+      .img-description {
+        padding: 15px;
+        font-size: 14px;
+        gap: 12px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .mid-section {
+        padding: 10px;
+        gap: 20px;
+      }
+
+      .mid-div {
+        margin-top: 20px;
+        padding: 15px;
+      }
+
+      .h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+      }
+
+      .cart-item {
+        padding: 12px;
+        font-size: 13px;
+      }
+
+      .del {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+
+      #place-order {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 100%;
+        max-width: 200px;
+      }
+
+      .second-div {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+      }
+
+      .pop-items {
+        min-height: 380px;
+      }
+
+      .pic {
+        height: 160px;
+      }
+
+      .img-description {
+        padding: 12px;
+        font-size: 13px;
+        gap: 10px;
+      }
+    }
+
+    /* Mobile Menu Styles */
+    .hamburger-menu {
+      display: none;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 1000;
+    }
+
+    .hamburger-menu span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px 0;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    @media screen and (max-width: 768px) {
+      .head-2 {
+        padding: 10px 20px;
+        position: relative;
+      }
+
+      .hamburger-menu {
+        display: block;
+      }
+
+      .head-2-left {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .head-2-left > *:not(.hamburger-menu) {
+        display: none;
+      }
+
+      .hold {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .head-2-right {
+        margin: 0;
+      }
+
+      .mobile-nav {
+        top: 60px;
+        height: calc(100% - 60px);
+      }
+    }
+
+    .head-2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      background-color: rgb(24, 23, 23);
+      height: 60px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .head-2-left {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .home-link {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-toggle {
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 0;
+      white-space: nowrap;
+      color: white;
+    }
+
+    .head-2-right {
+      color: white;
+    }
+
+    .head-2-right p {
+      margin: 0;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      padding: 12px;
+      border-radius: 4px;
+    }
+
+    .dropdown.open .dropdown-menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .dropp {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .dropp a {
+      color: black;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropp a:hover {
+      color: rgb(204, 13, 13);
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgb(24, 23, 23);
+      z-index: 999;
+      padding-top: 60px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .mobile-nav-content {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .mobile-link {
+      padding: 15px;
+      text-decoration: none;
+      color: white;
+      border-bottom: 1px solid #444;
+    }
+
+    .mobile-dropdown {
+      border-bottom: 1px solid #444;
+    }
+
+    .mobile-dropdown-toggle {
+      width: 100%;
+      padding: 15px;
+      text-align: left;
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .mobile-dropdown-menu {
+      display: none;
+      padding-left: 20px;
+    }
+
+    .mobile-dropdown-menu.active {
+      display: block;
+    }
+
+    .mobile-dropdown-menu a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .mobile-dropdown-menu a:hover,
+    .mobile-link:hover {
+      color: rgb(204, 13, 13);
+    }
+
+    /* Add hamburger animation styles */
+    .hamburger-menu.active span {
+      background-color: #333;
+    }
+
+    @media screen and (max-width: 768px) {
+      .hamburger-menu {
+        display: block;
+        margin-right: 15px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -81,92 +451,100 @@
         <h2 class="right">OEM PARTS ONLINE</h2>
     </div>
     <ul class="nav-bar">
-        <li><a href="contactus.html"><i class="fas fa-circle-question"></i>&nbsp;CONTACT US</a></li>
-     
-        <li><a class="my-cart-text" href="#"><i class="fas fa-shopping-cart"></i>&nbsp;MY CART</a></li>
+        <li><a href="contactus.html"><i class="fas fa-circle-question"></i>&nbsp;<span class="nav-text">CONTACT US</span></a></li>
+        <li><a class="my-cart-text" href="#"><i class="fas fa-shopping-cart"></i>&nbsp;<span class="nav-text">MY CART</span></a></li>
     </ul>
 </header>
+
 <header class="head-2">
     <div class="head-2-left">
-    <a class="home-link" href="homepage.html">Home</a>
-
-    <div class="dropdown" id="productDropdown">
-      <button class="dropdown-toggle">Parts</button>
-      <div class="dropdown-menu">
-        <div class="dropp">
-        <a href="Engine.html">Engine Components</a>
-        <a href="brake.html">Braking System</a>
-        <a href="suspension.html">Suspension & Steering</a>
-        <a href="transmission.html">Transmission & Drivetrain</a>
-        <a href="exhaust.html">Exhaust System</a>
-    </div>
-    <div class="dropp">
-        <a href="electrical.html">Electrical & Lighting</a>
-        <a href="interior.html">Interior Parts</a>
-        <a href="exterior.html">Exterior & Body Parts</a>
-        <a href="fuel.html">Fuel System</a>
-        <a href="cooling.html">Cooling System</a>
-    </div>
-      </div>
-    </div>
-
-   
-
-      <div class="dropdown" id="newproductDropdown">
-        <button class="dropdown-toggle">Accessories</button>
-        <div class="dropdown-menu">
-            <div class="dropp">
-          <a href="performance.html">Performance Accessories</a><br>
-          <a href="intacc.html">Interior Accessories</a><br>
-          <a href="extacc.html">Exterior Accessories</a><br>
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <div class="dropp">
-            <a href="tech.html">Tech & Convenience Accessories</a><br>
-            <a href="wheels.html">Wheels & Tire Accessories</a><br>
-            <a href="lifestyle.html">Lifestyle & Brand Gear</a><br>
-          </div>
+        <a class="home-link" href="index.html">Home</a>
+        <div class="dropdown" id="productDropdown">
+            <button class="dropdown-toggle">Parts</button>
+            <div class="dropdown-menu">
+                <div class="dropp">
+                    <a href="Engine.html">Engine Components</a>
+                    <a href="brake.html">Braking System</a>
+                    <a href="suspension.html">Suspension & Steering</a>
+                    <a href="transmission.html">Transmission & Drivetrain</a>
+                    <a href="exhaust.html">Exhaust System</a>
+                </div>
+                <div class="dropp">
+                    <a href="electrical.html">Electrical & Lighting</a>
+                    <a href="interior.html">Interior Parts</a>
+                    <a href="exterior.html">Exterior & Body Parts</a>
+                    <a href="fuel.html">Fuel System</a>
+                    <a href="cooling.html">Cooling System</a>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <a class="home-link" href="about.html">About Us</a>
-      <a class="home-link" href="review.html">Reviews</a>
-</div>
-    
-<div class="hold"><marquee><div class="head-2-right">
-   
-    <p><i class="fas fa-truck"></i>&nbsp;Fast Shipping</p>
-    <p><i class="fas fa-check"></i>&nbsp;Satisfaction Guarantee</p>
-</div></marquee></div>
-    <script>
-      const dropdown = document.getElementById('productDropdown');
-      const toggle = dropdown.querySelector('.dropdown-toggle');
-    
-      toggle.addEventListener('mouseover', () => {
-        dropdown.classList.toggle('open');
-      });
-    
-      // Optional: close the dropdown if clicking outside
-      document.addEventListener('mouseout', function(e) {
-        if (!dropdown.contains(e.target)) {
-          dropdown.classList.remove('open');
-        }
-      });
+        <div class="dropdown" id="newproductDropdown">
+            <button class="dropdown-toggle">Accessories</button>
+            <div class="dropdown-menu">
+                <div class="dropp">
+                    <a href="performance.html">Performance Accessories</a><br>
+                    <a href="intacc.html">Interior Accessories</a><br>
+                    <a href="extacc.html">Exterior Accessories</a><br>
+                </div>
+                <div class="dropp">
+                    <a href="tech.html">Tech & Convenience Accessories</a><br>
+                    <a href="wheels.html">Wheels & Tire Accessories</a><br>
+                    <a href="lifestyle.html">Lifestyle & Brand Gear</a><br>
+                </div>
+            </div>
+        </div>
 
-      const newdropdown = document.getElementById('newproductDropdown');
-      const newtoggle = newdropdown.querySelector('.dropdown-toggle');
+        <a class="home-link" href="about.html">About Us</a>
+        <a class="home-link" href="review.html">Reviews</a>
+    </div>
     
-      newtoggle.addEventListener('mouseover', () => {
-        newdropdown.classList.toggle('open');
-      });
-    
-      // Optional: close the dropdown if clicking outside
-      document.addEventListener('mouseout', function(e) {
-        if (!newdropdown.contains(e.target)) {
-          newdropdown.classList.remove('open');
-        }
-      });
-    </script>
+    <div class="hold">
+        <div class="head-2-right">
+            <p><i class="fas fa-check"></i>&nbsp;Satisfaction Guarantee</p>
+        </div>
+    </div>
 </header>
+
+<nav class="mobile-nav">
+    <div class="mobile-nav-content">
+        <a class="mobile-link" href="index.html">Home</a>
+        <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle">Parts</button>
+            <div class="mobile-dropdown-menu">
+                <a href="Engine.html">Engine Components</a>
+                <a href="brake.html">Brake System</a>
+                <a href="suspension.html">Suspension & Steering</a>
+                <a href="transmission.html">Transmission & Drivetrain</a>
+                <a href="exhaust.html">Exhaust System</a>
+                <a href="electrical.html">Electrical & Lighting</a>
+                <a href="interior.html">Interior Parts</a>
+                <a href="exterior.html">Exterior & Body Parts</a>
+                <a href="fuel.html">Fuel System</a>
+                <a href="cooling.html">Cooling System</a>
+            </div>
+        </div>
+        <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle">Accessories</button>
+            <div class="mobile-dropdown-menu">
+                <a href="performance.html">Performance Accessories</a>
+                <a href="intacc.html">Interior Accessories</a>
+                <a href="extacc.html">Exterior Accessories</a>
+                <a href="tech.html">Tech & Convenience Accessories</a>
+                <a href="wheels.html">Wheels & Tire Accessories</a>
+                <a href="lifestyle.html">Lifestyle & Brand Gear</a>
+            </div>
+        </div>
+        <a class="mobile-link" href="about.html">About Us</a>
+        <a class="mobile-link" href="review.html">Reviews</a>
+    </div>
+</nav>
+
 <section class="mid-section">
   <div class="mid-div">
   <h2 class="h2">Your Cart&nbsp;<i class="fas fa-shopping-cart"></i></h2>
@@ -366,5 +744,60 @@
 </div>
 
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+        // Hamburger menu click handler
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event bubbling
+            this.classList.toggle('active');
+            
+            // Toggle spans for X animation
+            const spans = this.querySelectorAll('span');
+            spans[0].style.transform = this.classList.contains('active') ? 'rotate(45deg) translate(5px, 5px)' : 'none';
+            spans[1].style.opacity = this.classList.contains('active') ? '0' : '1';
+            spans[2].style.transform = this.classList.contains('active') ? 'rotate(-45deg) translate(7px, -7px)' : 'none';
+            
+            mobileNav.classList.toggle('active');
+        });
+
+        // Mobile dropdown toggles
+        mobileDropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const dropdownMenu = this.nextElementSibling;
+                dropdownMenu.classList.toggle('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
+                mobileNav.classList.remove('active');
+                hamburger.classList.remove('active');
+                const spans = hamburger.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Desktop dropdowns
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            toggle.addEventListener('mouseover', () => {
+                dropdown.classList.add('open');
+            });
+            dropdown.addEventListener('mouseleave', () => {
+                dropdown.classList.remove('open');
+            });
+        });
+    });
+</script>
 </body>
 </html>
